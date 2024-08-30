@@ -57,6 +57,11 @@ export default function Header() {
               About
             </li>
           </Link>
+          <Link to='/loan-status'>
+            <li className='hidden sm:inline text-slate-700 hover:underline'>
+              Loan Status
+            </li>
+          </Link>
           <Link to='/profile'>
             {currentUser ? ( //if user is logged show the avatar
               <img
