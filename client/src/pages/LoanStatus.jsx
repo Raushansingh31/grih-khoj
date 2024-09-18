@@ -43,7 +43,7 @@ const LoanStatus = () => {
 
       if (!response.ok) {
         throw new Error('An error occurred while fetching the prediction.');
-      }
+      } //creates a new Error object with a custom error message. This message provides context about what went wrong, making it easier to debug or inform the user.
 
       const data = await response.json();
       setPrediction(data.prediction);
@@ -62,7 +62,7 @@ const LoanStatus = () => {
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Gender:</label>
           <select
-            name="Gender"
+            name="Gender" //Specifies the name of the form field. When the form is submitted, this name will be used as the key in the form data.
             value={formData.Gender}
             onChange={handleChange}
             required

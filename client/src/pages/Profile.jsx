@@ -129,7 +129,7 @@ export default function Profile() {
 
   const handleShowListings = async () => {
     try {
-      setShowListingsError(false);    //for removing previous error message on the site which is shown by conditonal tailwind css
+      setShowListingsError(false);    //for removing previous error message on the site which is shown by conditonal tailwind css 
       const res = await fetch(`/api/user/listings/${currentUser._id}`);
       const data = await res.json();
       if (data.success === false) {

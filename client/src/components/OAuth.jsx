@@ -9,8 +9,8 @@ export default function OAuth() {
   const navigate = useNavigate();
   const handleGoogleClick = async () => {
     try {
-      const provider = new GoogleAuthProvider();
-      const auth = getAuth(app);
+      const provider = new GoogleAuthProvider();//The GoogleAuthProvider object is used to configure the authentication provider to sign in users using their Google account.
+      const auth = getAuth(app);//This initializes the Firebase authentication service by calling getAuth(), passing in your Firebase app instance (app). app refers to your Firebase app, which was previously initialized using initializeApp() from Firebase SDK.
 
       const result = await signInWithPopup(auth, provider);// google sign in popup will be shown
 

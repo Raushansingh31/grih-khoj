@@ -5,16 +5,16 @@ import storage from 'redux-persist/lib/storage'; //default storage engine for re
 
 const rootReducer = combineReducers({ user: userReducer }); // combine reducer
 
-const persistConfig = { //Persist Configuration
+const persistConfig = { //Persist Configuration 
   key: 'root',
   storage,
   version: 1,
-};
+}; //You can define whitelists or blacklists in persistConfig to specify which slices of the state should or shouldn't be persisted.
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);  //persistReducer: Wraps the rootReducer with persistence capabilities. This reducer handles saving and rehydrating the Redux state to/from storage.
 
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: persistedReducer,//passed to the configureStore method as the main reducer.
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
